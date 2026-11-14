@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haress - Your orders, guarded.</title>
+    <style>
+        :root {
+            --bg-color: #0d1527;
+            --card-bg: rgba(25, 35, 55, 0.7);
+            --gold-color: #d4af37;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .notice {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            letter-spacing: 3px;
+            margin: 10px 0;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-title {
+            color: var(--gold-color);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0 0 16px 0;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #ffffff;
+            color: #0d1527;
+            text-align: center;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            box-sizing: border-box;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #f1f5f9;
+        }
+
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: #ffffff;
+            color: #0d1527;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content h4 {
+            margin: 0 0 4px 0;
+            font-size: 15px;
+        }
+
+        .step-content p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .qa-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .qa-item {
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .qa-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .footer-brand {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Notice -->
+        <div class="notice">
+            Sample page: the numbers, handles and links below are placeholders until the real ones are added.
+        </div>
+
+        <!-- Hero Section (Logo & Title) -->
+        <div class="hero">
+            <img src="logo.png" alt="Haress Logo">
+            <h1>H A R E S S</h1>
+            <p>Wherever you are, your order is received safely!</p>
+        </div>
+
+        <!-- Talk to Us -->
+        <div class="card">
+            <div class="card-title">Talk to Us</div>
+            <p style="margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Phone and WhatsApp</p>
+            <p style="font-size: 18px; font-weight: bold; margin-bottom: 16px;">+20 10X XXX XXXX</p>
+            <a href="#" class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3);">Copy number</a>
+            
+            <p style="margin-top: 20px; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Email</p>
+            <p style="font-size: 15px; margin-bottom: 16px;">hello@haress.example</p>
+            <a href="#" class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3);">Copy email</a>
+            
+            <p style="margin-top: 20px; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Working hours</p>
+            <p style="margin: 0; font-weight: 500;">Every day, 9 AM to 10 PM</p>
+        </div>
+
+        <!-- Follow Haress -->
+        <div class="card">
+            <div class="card-title">Follow Haress</div>
+            <div class="step-list">
+                <div class="step-item" style="align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <h4 style="margin:0;">Facebook</h4>
+                        <p style="margin:0;">facebook.com/haress.eg</p>
+                    </div>
+                </div>
+                <div class="step-item" style="align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <h4 style="margin:0;">Instagram</h4>
+                        <p style="margin:0;">@haress.eg</p>
+                    </div>
+                </div>
+                <div class="step-item" style="align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <h4 style="margin:0;">TikTok</h4>
+                        <p style="margin:0;">@haress.eg</p>
+                    </div>
+                </div>
+                <div class="step-item" style="align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <h4 style="margin:0;">WhatsApp</h4>
+                        <p style="margin:0;">+20 10X XXX XXXX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Your Haress Box -->
+        <div class="card">
+            <div class="card-title">Order Your Haress Box</div>
+            <p>Two versions: a key lock, or a digital keypad lock. Pick the color and finish that match your home.</p>
+            <a href="#" class="btn">Visit the online store</a>
+        </div>
+
+        <!-- Free Installation, Step by Step -->
+        <div class="card">
+            <div class="card-title">Free Installation, Step by Step</div>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Order online</h4>
+                        <p>Choose the lock type, color and finish.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>We call you</h4>
+                        <p>We confirm your address and a time that suits you.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Our team installs it</h4>
+                        <p>We fix the box to the wall by your door. No charge.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Receive safely</h4>
+                        <p>The courier locks your order inside. Only you can open it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Answers -->
+        <div class="card">
+            <div class="card-title">Quick Answers</div>
+            <div class="qa-list">
+                <div class="qa-item">How do I open the box?</div>
+                <div class="qa-item">Will a large order fit?</div>
+                <div class="qa-item">Does my compound need to approve it?</div>
+                <div class="qa-item">Which areas do you cover?</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-brand">
+            Haress. Your orders, guarded.
+        </div>
+    </div>
+
+</body>
+</html>
