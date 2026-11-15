@@ -1,286 +1,400 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haress - Your orders, guarded.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d1527;
-            --card-bg: rgba(25, 35, 55, 0.7);
-            --gold-color: #d4af37;
-            --text-main: #ffffff;
+            --bg-main: #0c1322;
+            --banner-bg: #1e293b;
+            --card-bg: #151f32;
+            --inner-box-bg: #182338;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-btn: rgba(255, 255, 255, 0.28);
+            --gold: #d4a64a;
+            --text-white: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .top-banner {
+            background-color: var(--banner-bg);
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 13px;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            line-height: 1.4;
         }
 
         .container {
-            width: 100%;
-            max-width: 480px;
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 36px 16px 48px;
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .notice {
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-
+        /* Hero Section with Card Background and Normal Image Display */
         .hero {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 30px 20px;
             text-align: center;
-            padding: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
         }
 
         .hero img {
-          width: 100%;
-    max-width: 220px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    mix-blend-mode: multiply;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(10px);
-        }
-
-        .card-title {
-            color: var(--gold-color);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-        }
-
-        .card p {
-            font-size: 15px;
-            color: var(--text-main);
-            line-height: 1.6;
-            margin: 0 0 16px 0;
-        }
-
-        .btn {
-            display: block;
             width: 100%;
-            background-color: #ffffff;
-            color: #0d1527;
-            text-align: center;
-            padding: 14px;
+            max-width: 260px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
             border-radius: 12px;
+            /* تم إزالة أي تأثيرات مظلمة لتظهر الصورة بشكلها الطبيعي والأصلي تماماً */
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 24px 20px;
+        }
+
+        .section-label {
+            color: var(--gold);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .contact-block {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .contact-block:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .field-label {
+            color: var(--text-muted);
+            font-size: 13.5px;
+            margin-bottom: 6px;
+        }
+
+        .field-value {
+            font-size: 18.5px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 14px;
+            letter-spacing: 0.2px;
+        }
+
+        .field-value.hours {
+            font-size: 16.5px;
             font-weight: 600;
-            text-decoration: none;
-            box-sizing: border-box;
-            transition: 0.2s;
+            margin-bottom: 0;
         }
 
-        .btn:hover {
-            background-color: #f1f5f9;
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid var(--border-btn);
+            border-radius: 10px;
+            padding: 10px 22px;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .step-list {
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ffffff;
+        }
+
+        .social-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .step-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
+        .social-box {
+            display: block;
+            text-decoration: none;
+            background-color: var(--inner-box-bg);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 16px 18px;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
-        .step-number {
-            background-color: #ffffff;
-            color: #0d1527;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
+        .social-box:hover {
+            border-color: rgba(212, 166, 74, 0.4);
+            background-color: #1d2a42;
+        }
+
+        .social-name {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .social-handle {
+            color: var(--text-muted);
             font-size: 14px;
+        }
+
+        .order-desc {
+            color: #e2e8f0;
+            font-size: 15.5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-solid {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: #0c1322;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 13px 24px;
+            border-radius: 10px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-solid:hover {
+            background-color: #ffffff;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            color: #0c1322;
+            font-weight: 700;
+            font-size: 14.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
             margin-top: 2px;
         }
 
-        .step-content h4 {
-            margin: 0 0 4px 0;
-            font-size: 15px;
+        .step-info h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
         }
 
-        .step-content p {
-            margin: 0;
-            font-size: 13px;
+        .step-info p {
+            font-size: 14.5px;
             color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .qa-list {
             display: flex;
             flex-direction: column;
-            gap: 14px;
         }
 
         .qa-item {
-            padding-bottom: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 15px;
-            font-weight: 500;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 16px;
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .qa-item:first-child {
+            padding-top: 4px;
         }
 
         .qa-item:last-child {
+            padding-bottom: 4.5px;
             border-bottom: none;
-            padding-bottom: 0;
         }
 
-        .footer-brand {
+        .footer {
             text-align: center;
-            font-size: 13px;
             color: var(--text-muted);
-            margin-top: 10px;
+            font-size: 13.5px;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Notice -->
-        <div class="notice">
-            Sample page: the numbers, handles and links below are placeholders until the real ones are added.
-        </div>
+    <div class="top-banner">
+        Sample page: the numbers, handles and links below are placeholders until the real ones are added.
+    </div>
 
-        <!-- Hero Section (Logo Image) -->
+    <div class="container">
+        
+        <!-- Hero Section with Normal Logo Image -->
         <div class="hero">
             <img src="logo.png" alt="Haress Logo">
         </div>
 
         <!-- Talk to Us -->
-        <div class="card">
-            <div class="card-title">Talk to Us</div>
-            <p style="margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Phone and WhatsApp</p>
-            <p style="font-size: 18px; font-weight: bold; margin-bottom: 16px;">+20 10X XXX XXXX</p>
-            <a href="#" class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3);">Copy number</a>
+        <section class="card">
+            <div class="section-label">TALK TO US</div>
             
-            <p style="margin-top: 20px; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Email</p>
-            <p style="font-size: 15px; margin-bottom: 16px;">hello@haress.example</p>
-            <a href="#" class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3);">Copy email</a>
-            
-            <p style="margin-top: 20px; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Working hours</p>
-            <p style="margin: 0; font-weight: 500;">Every day, 9 AM to 10 PM</p>
-        </div>
+            <div class="contact-block">
+                <div class="field-label">Phone and WhatsApp</div>
+                <div class="field-value" id="phone-text">+20 10X XXX XXXX</div>
+                <button class="btn-outline" onclick="copyText('phone-text', this, 'Copy number')">Copy number</button>
+            </div>
+
+            <div class="contact-block">
+                <div class="field-label">Email</div>
+                <div class="field-value" id="email-text">hello@haress.example</div>
+                <button class="btn-outline" onclick="copyText('email-text', this, 'Copy email')">Copy email</button>
+            </div>
+
+            <div class="contact-block">
+                <div class="field-label">Working hours</div>
+                <div class="field-value hours">Every day, 9 AM to 10 PM</div>
+            </div>
+        </section>
 
         <!-- Follow Haress -->
-        <div class="card">
-            <div class="card-title">Follow Haress</div>
-            <div class="step-list">
-                <div class="step-item" style="align-items: center;">
-                    <div style="flex-grow: 1;">
-                        <h4 style="margin:0;">Facebook</h4>
-                        <p style="margin:0;">facebook.com/haress.eg</p>
-                    </div>
-                </div>
-                <div class="step-item" style="align-items: center;">
-                    <div style="flex-grow: 1;">
-                        <h4 style="margin:0;">Instagram</h4>
-                        <p style="margin:0;">@haress.eg</p>
-                    </div>
-                </div>
-                <div class="step-item" style="align-items: center;">
-                    <div style="flex-grow: 1;">
-                        <h4 style="margin:0;">TikTok</h4>
-                        <p style="margin:0;">@haress.eg</p>
-                    </div>
-                </div>
-                <div class="step-item" style="align-items: center;">
-                    <div style="flex-grow: 1;">
-                        <h4 style="margin:0;">WhatsApp</h4>
-                        <p style="margin:0;">+20 10X XXX XXXX</p>
-                    </div>
-                </div>
+        <section class="card">
+            <div class="section-label">FOLLOW HARESS</div>
+            <div class="social-list">
+                <a href="#" class="social-box">
+                    <div class="social-name">Facebook</div>
+                    <div class="social-handle">facebook.com/haress.eg</div>
+                </a>
+                <a href="#" class="social-box">
+                    <div class="social-name">Instagram</div>
+                    <div class="social-handle">@haress.eg</div>
+                </a>
+                <a href="#" class="social-box">
+                    <div class="social-name">TikTok</div>
+                    <div class="social-handle">@haress.eg</div>
+                </a>
+                <a href="#" class="social-box">
+                    <div class="social-name">WhatsApp</div>
+                    <div class="social-handle">+20 10X XXX XXXX</div>
+                </a>
             </div>
-        </div>
+        </section>
 
         <!-- Order Your Haress Box -->
-        <div class="card">
-            <div class="card-title">Order Your Haress Box</div>
-            <p>Two versions: a key lock, or a digital keypad lock. Pick the color and finish that match your home.</p>
-            <a href="#" class="btn">Visit the online store</a>
-        </div>
+        <section class="card">
+            <div class="section-label">ORDER YOUR HARESS BOX</div>
+            <p class="order-desc">
+                Two versions: a key lock, or a digital keypad lock. Pick the color and finish that match your home.
+            </p>
+            <a href="#" class="btn-solid">Visit the online store</a>
+        </section>
 
         <!-- Free Installation, Step by Step -->
-        <div class="card">
-            <div class="card-title">Free Installation, Step by Step</div>
-            <div class="step-list">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Order online</h4>
+        <section class="card">
+            <div class="section-label">FREE INSTALLATION, STEP BY STEP</div>
+            <div class="steps-list">
+                <div class="step-row">
+                    <div class="step-circle">1</div>
+                    <div class="step-info">
+                        <h3>Order online</h3>
                         <p>Choose the lock type, color and finish.</p>
                     </div>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>We call you</h4>
+                <div class="step-row">
+                    <div class="step-circle">2</div>
+                    <div class="step-info">
+                        <h3>We call you</h3>
                         <p>We confirm your address and a time that suits you.</p>
                     </div>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Our team installs it</h4>
+                <div class="step-row">
+                    <div class="step-circle">3</div>
+                    <div class="step-info">
+                        <h3>Our team installs it</h3>
                         <p>We fix the box to the wall by your door. No charge.</p>
                     </div>
                 </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>Receive safely</h4>
+                <div class="step-row">
+                    <div class="step-circle">4</div>
+                    <div class="step-info">
+                        <h3>Receive safely</h3>
                         <p>The courier locks your order inside. Only you can open it.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Quick Answers -->
-        <div class="card">
-            <div class="card-title">Quick Answers</div>
+        <section class="card">
+            <div class="section-label">QUICK ANSWERS</div>
             <div class="qa-list">
                 <div class="qa-item">How do I open the box?</div>
                 <div class="qa-item">Will a large order fit?</div>
                 <div class="qa-item">Does my compound need to approve it?</div>
                 <div class="qa-item">Which areas do you cover?</div>
             </div>
-        </div>
+        </section>
 
         <!-- Footer -->
-        <div class="footer-brand">
+        <footer class="footer">
             Haress. Your orders, guarded.
-        </div>
+        </footer>
+
     </div>
 
+    <script>
+        function copyText(elementId, btn, defaultLabel) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerText = 'Copied!';
+                setTimeout(() => {
+                    btn.innerText = defaultLabel;
+                }, 1500);
+            });
+        }
+    </script>
 </body>
 </html>
