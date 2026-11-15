@@ -53,7 +53,6 @@
             gap: 20px;
         }
 
-        /* Hero Section with Card Background and Normal Image Display */
         .hero {
             background-color: var(--card-bg);
             border: 1px solid var(--border-subtle);
@@ -62,6 +61,7 @@
             text-align: center;
         }
 
+        /* إجبار الصورة على الظهور بألوانها وإضاءتها الطبيعية 100% */
         .hero img {
             width: 100%;
             max-width: 260px;
@@ -69,10 +69,11 @@
             display: block;
             margin: 0 auto;
             border-radius: 12px;
-            /* تم إزالة أي تأثيرات مظلمة لتظهر الصورة بشكلها الطبيعي والأصلي تماماً */
+            opacity: 1 !important;
+            filter: none !important;
+            mix-blend-mode: normal !important;
         }
 
-        /* Cards */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-subtle);
@@ -253,148 +254,8 @@
         }
 
         .qa-item:last-child {
-            padding-bottom: 4.5px;
+            padding-bottom: 4px;
             border-bottom: none;
         }
 
         .footer {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 13.5px;
-            margin-top: 8px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="top-banner">
-        Sample page: the numbers, handles and links below are placeholders until the real ones are added.
-    </div>
-
-    <div class="container">
-        
-        <!-- Hero Section with Normal Logo Image -->
-        <div class="hero">
-            <img src="logo.png" alt="Haress Logo">
-        </div>
-
-        <!-- Talk to Us -->
-        <section class="card">
-            <div class="section-label">TALK TO US</div>
-            
-            <div class="contact-block">
-                <div class="field-label">Phone and WhatsApp</div>
-                <div class="field-value" id="phone-text">+20 10X XXX XXXX</div>
-                <button class="btn-outline" onclick="copyText('phone-text', this, 'Copy number')">Copy number</button>
-            </div>
-
-            <div class="contact-block">
-                <div class="field-label">Email</div>
-                <div class="field-value" id="email-text">hello@haress.example</div>
-                <button class="btn-outline" onclick="copyText('email-text', this, 'Copy email')">Copy email</button>
-            </div>
-
-            <div class="contact-block">
-                <div class="field-label">Working hours</div>
-                <div class="field-value hours">Every day, 9 AM to 10 PM</div>
-            </div>
-        </section>
-
-        <!-- Follow Haress -->
-        <section class="card">
-            <div class="section-label">FOLLOW HARESS</div>
-            <div class="social-list">
-                <a href="#" class="social-box">
-                    <div class="social-name">Facebook</div>
-                    <div class="social-handle">facebook.com/haress.eg</div>
-                </a>
-                <a href="#" class="social-box">
-                    <div class="social-name">Instagram</div>
-                    <div class="social-handle">@haress.eg</div>
-                </a>
-                <a href="#" class="social-box">
-                    <div class="social-name">TikTok</div>
-                    <div class="social-handle">@haress.eg</div>
-                </a>
-                <a href="#" class="social-box">
-                    <div class="social-name">WhatsApp</div>
-                    <div class="social-handle">+20 10X XXX XXXX</div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Order Your Haress Box -->
-        <section class="card">
-            <div class="section-label">ORDER YOUR HARESS BOX</div>
-            <p class="order-desc">
-                Two versions: a key lock, or a digital keypad lock. Pick the color and finish that match your home.
-            </p>
-            <a href="#" class="btn-solid">Visit the online store</a>
-        </section>
-
-        <!-- Free Installation, Step by Step -->
-        <section class="card">
-            <div class="section-label">FREE INSTALLATION, STEP BY STEP</div>
-            <div class="steps-list">
-                <div class="step-row">
-                    <div class="step-circle">1</div>
-                    <div class="step-info">
-                        <h3>Order online</h3>
-                        <p>Choose the lock type, color and finish.</p>
-                    </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-circle">2</div>
-                    <div class="step-info">
-                        <h3>We call you</h3>
-                        <p>We confirm your address and a time that suits you.</p>
-                    </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-circle">3</div>
-                    <div class="step-info">
-                        <h3>Our team installs it</h3>
-                        <p>We fix the box to the wall by your door. No charge.</p>
-                    </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-circle">4</div>
-                    <div class="step-info">
-                        <h3>Receive safely</h3>
-                        <p>The courier locks your order inside. Only you can open it.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Answers -->
-        <section class="card">
-            <div class="section-label">QUICK ANSWERS</div>
-            <div class="qa-list">
-                <div class="qa-item">How do I open the box?</div>
-                <div class="qa-item">Will a large order fit?</div>
-                <div class="qa-item">Does my compound need to approve it?</div>
-                <div class="qa-item">Which areas do you cover?</div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            Haress. Your orders, guarded.
-        </footer>
-
-    </div>
-
-    <script>
-        function copyText(elementId, btn, defaultLabel) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                btn.innerText = 'Copied!';
-                setTimeout(() => {
-                    btn.innerText = defaultLabel;
-                }, 1500);
-            });
-        }
-    </script>
-</body>
-</html>
